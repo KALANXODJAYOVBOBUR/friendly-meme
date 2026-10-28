@@ -1,0 +1,181 @@
+
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LUMIÈRE | Restaurant</title>
+  <link rel="stylesheet" href="./dima.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Telefon raqami bilan kirish -->
+  <div class="login-screen" id="loginScreen">
+    <div class="login-card">
+      <div class="logo">L</div>
+      <p class="eyebrow">RESTAURANT & DINING</p>
+      <h1>LUMIÈRE</h1>
+      <p>Har bir lahza mazali bo‘lsin.</p>
+
+      <form id="loginForm">
+        <label for="phone">Telefon raqamingiz</label>
+        <div class="phone-input">
+          <span>+998</span>
+          <input id="phone" type="tel" maxlength="9"
+            placeholder="901234567" required>
+        </div>
+        <p id="phoneError" class="error"></p>
+        <button class="gold-button" type="submit">Saytga kirish ↗</button>
+      </form>
+      <small>Demo versiya — SMS tasdiqlash yo‘q.</small>
+    </div>
+  </div>
+
+  <!-- Asosiy sayt -->
+  <div id="site" class="hidden">
+    <header class="navbar">
+      <a href="#home" class="brand">LUMIÈRE<span>✳</span></a>
+      <nav id="navLinks">
+        <a href="#home">Bosh sahifa</a>
+        <a href="#menu">Menyu</a>
+        <a href="#about">Biz haqimizda</a>
+        <a href="#reservation">Stol band qilish</a>
+      </nav>
+      <button id="cartButton" class="cart-button">
+        🛒 Savat <span id="cartCount">0</span>
+      </button>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="hero-content">
+          <p class="eyebrow">TOSHKENTDAGI YANGI TA’M MANZILI</p>
+          <h2>Ta’m — bu<br><em>san’at.</em></h2>
+          <p>
+            Har bir taomda o‘ziga xoslik, har bir lahzada
+            unutilmas kayfiyat. Biz bilan yangi ta’mlarni kashf eting.
+          </p>
+          <a class="gold-button" href="#menu">Menyuni ko‘rish ↗</a>
+          <div class="rating">★ 4.9/5 <span>Mehmonlar bahosi</span></div>
+        </div>
+        <div class="hero-image">
+          <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1100&q=85"
+            alt="Restoran taomlari">
+          <div class="image-label">YANGI MAVSUM MENYUSI<br><small>12:00 — 23:00</small></div>
+        </div>
+      </section>
+
+      <section class="menu-section" id="menu">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">BIZNING MENYU</p>
+            <h2>Yoqimli ta’mga<br><em>o‘zingizni qo‘ying.</em></h2>
+          </div>
+          <p>Yangi mahsulotlar va oshpazlarimizning maxsus retseptlari.</p>
+        </div>
+
+        <div class="menu-tools">
+          <div class="categories" id="categories">
+            <button class="category active" data-category="Barchasi">Barchasi</button>
+            <button class="category" data-category="Asosiy taom">Asosiy taom</button>
+            <button class="category" data-category="Pitsa">Pitsa</button>
+            <button class="category" data-category="Salat">Salat</button>
+            <button class="category" data-category="Desert">Desert</button>
+            <button class="category" data-category="Ichimlik">Ichimlik</button>
+          </div>
+          <input id="searchInput" class="search-input"
+            type="search" placeholder="Taom qidirish...">
+        </div>
+
+        <div class="product-grid" id="productGrid"></div>
+        <p id="emptyState" class="empty-state hidden">Taom topilmadi.</p>
+      </section>
+
+      <section class="about-section" id="about">
+        <div>
+          <p class="eyebrow">BIZNING HIKOYAMIZ</p>
+          <h2>Yaxshi taom.<br><em>Yaxshi kayfiyat.</em></h2>
+        </div>
+        <p>
+          LUMIÈRE — oila va do‘stlar bilan mazali taomlardan
+          bahramand bo‘lish uchun yaratilgan zamonaviy restoran.
+          Biz har bir buyurtmani mehr bilan tayyorlaymiz.
+        </p>
+      </section>
+
+      <section class="reservation-section" id="reservation">
+        <div>
+          <p class="eyebrow">SIZNI KUTAMIZ</p>
+          <h2>Yaxshi joyni<br><em>band qiling.</em></h2>
+          <p>Toshkent shahri · Har kuni 12:00–23:00</p>
+        </div>
+        <form id="reservationForm" class="reservation-form">
+          <h3>Stol band qilish</h3>
+          <label for="guestName">Ismingiz</label>
+          <input id="guestName" placeholder="Ismingiz" required>
+
+          <label for="guestPhone">Telefon raqami</label>
+          <input id="guestPhone" type="tel"
+            placeholder="+998 90 123 45 67" required>
+
+          <div class="form-row">
+            <div>
+              <label for="reserveDate">Sana</label>
+              <input id="reserveDate" type="date" required>
+            </div>
+            <div>
+              <label for="reserveTime">Vaqt</label>
+              <select id="reserveTime" required>
+                <option value="">Tanlang</option>
+                <option>12:00</option><option>13:00</option>
+                <option>14:00</option><option>15:00</option>
+                <option>16:00</option><option>17:00</option>
+                <option>18:00</option><option>19:00</option>
+                <option>20:00</option><option>21:00</option>
+                <option>22:00</option>
+              </select>
+            </div>
+          </div>
+
+          <label for="guestCount">Mehmonlar soni</label>
+          <select id="guestCount">
+            <option>1 kishi</option>
+            <option selected>2 kishi</option>
+            <option>3 kishi</option>
+            <option>4 kishi</option>
+            <option>5 kishi</option>
+            <option>6+ kishi</option>
+          </select>
+          <button class="gold-button" type="submit">So‘rov yuborish ↗</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <a href="#home" class="brand">LUMIÈRE<span>✳</span></a>
+      <p>Yaxshi ta’m — yaxshi xotira.</p>
+      <small>© 2026 LUMIÈRE Restaurant</small>
+    </footer>
+  </div>
+
+  <!-- Savat oynasi -->
+  <div id="cartDrawer" class="cart-drawer hidden">
+    <div id="cartBackdrop" class="cart-backdrop"></div>
+    <aside class="cart-panel">
+      <div class="cart-header">
+        <h2>Savat</h2>
+        <button id="closeCart" class="close-button">×</button>
+      </div>
+      <div id="cartItems"></div>
+      <div class="cart-total">
+        <strong>Jami: <span id="cartTotal">0 so‘m</span></strong>
+        <button id="orderButton" class="gold-button">Buyurtma berish ↗</button>
+      </div>
+    </aside>
+  </div>
+
+  <div id="toast" class="toast"></div>
+  <script src="./dima2.js"></script>
+</body>
+</html>
